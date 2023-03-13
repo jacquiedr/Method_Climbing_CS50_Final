@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Remove Climb
+{% endblock %}
+
+{% block main %}
+    <h4>Climb you wish to remove from this session</h4>
+    <form action="/remove-climb" method="post">
+        <div class="mb-3">
+            <label for="date">Date of Session</label>
+            <select class="form-control mx-auto w-auto" id="date" name="date">
+                {% for row in sessions %}
+                    <option>{{ row.date }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="grade">Which climb would you like to delete?</label>
+            <select class="form-control mx-auto w-auto" id="grade" name="grade">
+                {% for row in sessions %}
+                    <option>{{ row.grade }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="style">What style was this climb?</label>
+            <select class="form-control mx-auto w-auto" id="style" name="style">
+                {% for row in sessions %}
+                    <option>{{ row.style }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Remove Climb</button>
+    </form>
+{% endblock %}

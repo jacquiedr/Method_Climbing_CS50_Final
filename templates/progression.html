@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Progression Charts
+{% endblock %}
+
+{% block main %}
+    <h1>Boulder Grade Pyramid</h1>
+    <div class="chartBox">
+        <canvas id="myChart"></canvas>
+    </div>
+    <br><br>
+    <h1>Sport Climbing Grade Pyramid</h1>
+    <div class="chartBox">
+        <canvas id="myChart1"></canvas>
+    </div>
+    <br><br>
+    <h1>Climbing Style Histogram</h1>
+    <div class="chartBox">
+        <canvas id="myChart2"></canvas>
+    </div>
+    {% block javascript %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        labels = JSON.parse({{ labels | tojson }})
+	    data = JSON.parse({{ data | tojson }})
+        const ctx = document.getElementById('myChart');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                label: '# of Climbs',
+                data: data,
+                borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctx1 = document.getElementById('myChart1');
+        labels1 = JSON.parse({{ labels1 | tojson }})
+	    data1 = JSON.parse({{ data1 | tojson }})
+        const myChart1 = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: labels1,
+                datasets: [{
+                label: '# of Climbs',
+                data: data1,
+                borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        ticks: {
+                            beginAtZero: true,
+                            stepSize: 1
+                        }
+                    },
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('myChart2');
+        labels2 = JSON.parse({{ labels2 | tojson }})
+	    data2 = JSON.parse({{ data2 | tojson }})
+        const myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: labels2,
+                datasets: [{
+                label: '% of Climbs',
+                data: data2,
+                borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: (value, index, values) => {
+                                return `${value}%`
+                            }
+
+                        }
+                    },
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+{% endblock %}
+{% endblock %}

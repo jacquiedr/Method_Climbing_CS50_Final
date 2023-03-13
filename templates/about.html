@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   About
+{% endblock %}
+
+{% block main %}
+
+    <div class="homepage-text">
+        <div class="text-in-homepage">
+            <h1>The App Designed To Help You Reach Your Highest Potential.</h1>
+            <br>
+            <h3>The <i>Method Climbing</i> training app is here to help you achieve all of your climbing goals. Record your climbing sessions, keep track of the climbs you complete, write down your goals, and see your progression in real time. All in the comfort of the <i>Method Climbing</i> app. </h3><br>
+            <form class="hmpg-btns" action="/register" method="get">
+                <button class="btn btn-primary" name="action" value="new" type="submit">New to the app? Start here.</button>
+            </form>
+            <form class="hmpg-btns" action="/login" method="get">
+                <button class="btn btn-primary" name="action" value="account_holder" type="submit">Already have an account? Log in.</button>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

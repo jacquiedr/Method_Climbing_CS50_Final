@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Session From {{ date }}
+{% endblock %}
+
+{% block main %}
+    <h1>Add Climb</h1>
+    <form action="/new-session" method="post">
+        <div class="mb-3">
+            <label for="routine">Date</label>
+            <input class="form-control mx-auto w-auto" id="date" name="date" type="date"><br>
+        </div>
+        <div class="mb-3">
+            <label for="routine">Type</label>
+            <select class="form-control mx-auto w-auto" id="date" name="grade" type="grade">
+                <option selected disabled value="type">Type</option>
+                <option value="sport">Sport Climb</option>
+                <option value="boulder">Boulder</option>
+                <option value="boulder">Boulder and Sport Climb</option>
+            </select>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">Start Logging Climbs</button>
+    </form>
+
+{% endblock %}

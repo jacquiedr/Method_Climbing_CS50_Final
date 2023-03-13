@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Create New Routine
+{% endblock %}
+
+{% block main %}
+    <h1>Log Climb</h1>
+    <form action="/add-climb" method="post">
+        <div class="mb-3">
+            <label for="session-date">Date</label>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="session-date" name="session-date" type="date">
+        </div>
+        <div class="mb-3">
+            <label for="type">Type</label>
+            <select class="form-control mx-auto w-auto" id="type" name="type">
+                <option selected disabled value="type">Type of Climb</option>
+                <option value="Sport">Sport Climb</option>
+                <option value="Boulder">Boulder</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="grade">Grade</label>
+            <select class="form-control mx-auto w-auto" id="grade" name="grade">
+                <option selected disabled value="type">Grade</option>
+                <option value="VB">VB</option>
+                <option value="V1">V1</option>
+                <option value="V2">V2</option>
+                <option value="V3">V3</option>
+                <option value="V4">V4</option>
+                <option value="V5">V5</option>
+                <option value="V6">V6</option>
+                <option value="V7">V7</option>
+                <option value="V8">V8</option>
+                <option value="V9">V9</option>
+                <option value="V10">V10</option>
+                <option value="V11">V11</option>
+                <option value="V12">V12</option>
+                <option value="V13">V13</option>
+                <option value="V14">V14</option>
+                <option value="V15">V15</option>
+                <option value="5.1">5.1</option>
+                <option value="5.2">5.2</option>
+                <option value="5.3">5.3</option>
+                <option value="5.4">5.4</option>
+                <option value="5.5">5.5</option>
+                <option value="5.6">5.6</option>
+                <option value="5.7">5.7</option>
+                <option value="5.8">5.8</option>
+                <option value="5.9">5.9</option>
+                <option value="5.10a">5.10a</option>
+                <option value="5.10b">5.10b</option>
+                <option value="5.10c">5.10c</option>
+                <option value="5.10d">5.10d</option>
+                <option value="5.11a">5.11a</option>
+                <option value="5.11b">5.11b</option>
+                <option value="5.11c">5.11c</option>
+                <option value="5.11d">5.11d</option>
+                <option value="5.12a">5.12a</option>
+                <option value="5.12b">5.12b</option>
+                <option value="5.12c">5.12c</option>
+                <option value="5.12d">5.12d</option>
+                <option value="5.13a">5.13a</option>
+                <option value="5.13b">5.13b</option>
+                <option value="5.13c">5.13c</option>
+                <option value="5.13d">5.13d</option>
+                <option value="5.14a">5.14a</option>
+                <option value="5.14b">5.14b</option>
+                <option value="5.14c">5.14c</option>
+                <option value="5.14d">5.14d</option>
+                <option value="5.15a">5.15a</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="type-ascent">Type of Ascent</label>
+            <select class="form-control mx-auto w-auto" id="type-ascent" name="type-ascent">
+                <option selected disabled value="type-ascent">Type of Ascent</option>
+                <option value="Redpoint">Redpoint</option>
+                <option value="Onsight">Onsight</option>
+                <option value="Flash">Flash</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="attempts">Attempts</label>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="attempts" name="attempts" type="number">
+        </div>
+        <div class="mb-3">
+            <label for="style">Style</label>
+            <select class="form-control mx-auto w-auto" id="style" name="style">
+                <option selected disabled value="style">Style</option>
+                <option value="Overhang">Overhang</option>
+                <option value="Slab">Slab</option>
+                <option value="Vert">Vertical</option>
+                <option value="Roof">Roof</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="notes">Notes</label>
+            <textarea autocomplete="off" autofocus class="form-control mx-auto w-auto" rows="4" cols="30" name="notes"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Log Climb</button>
+    </form>
+
+{% endblock %}

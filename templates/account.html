@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Profile
+{% endblock %}
+
+{% block main %}
+
+   <div class="title-container">
+      <div class="account-title">
+         <h1>Your Profile</h1>
+      </div>
+   </div>
+   <div class="outer-div">
+      <div class="col-1">
+         <div class="profile-pic">
+            <img src="./static/akiyo.jpg">
+         </div>
+         <div class="profile-info">
+            <h3>{{ firstName }} {{ lastName }}</h3>
+            <br>
+            <h6>Username: {{ username }}</h6>
+            <br>
+            <h6>Country: {{ country }}</h6>
+            <br>
+            <h6>Birthday: {{ birthday }}</h6>
+         </div>
+      </div>
+      <div class="col-2">
+         <div class="more-info">
+               <h6>Climbing goal: {{ goals }}
+               </h6>
+               <br>
+               <h6>Started climbing: {{ climbing_start }}</h6>
+               <br>
+               <h6>Occupation: {{ occupation }}</h6>
+               <br>
+               <h6>Other interests: {{ hobbies }}</h6>
+               <br>
+               <h6>Your favourite climbing area or gym: {{ favorite }}</h6>
+
+            <form action="/edit-details" method="get">
+               <button class="btn btn-primary edit-profile" type="submit">Edit Profile Info</button>
+            </form>
+            <form action="/edit-pass" method="get">
+               <button class="btn btn-primary edit-profile" type="submit">Change Password</button>
+            </form>
+         </div>
+      </div>
+   </div>
+{% endblock %}

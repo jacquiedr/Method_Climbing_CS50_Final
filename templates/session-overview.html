@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Session Overview
+{% endblock %}
+
+{% block main %}
+<h1 name="date">Session Log: {{ session_date }}</h1>
+<div class="routines-container">
+    <div class="visit-routine">
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Type of Climb</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Attempts</th>
+                    <th scope="col">Type of Ascent</th>
+                    <th scope="col">Style</th>
+                    <th scope="col">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in sessions %}
+                    <tr class="table-active">
+                        <td name="type">{{ row.type}}</td>
+                        <td name="grade">{{ row.grade}}</td>
+                        <td name="attempts">{{ row.attempts }}</td>
+                        <td name="climb">{{ row.climb }}</td>
+                        <td name="style">{{ row.style }}</td>
+                        <td name="notes">{{ row.notes }}</td>
+                        <td><a href="{{ url_for('delete_climb', index=loop.index0) }}"><button class="btn btn-primary change">Delete</button></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+    </div>
+    <form action="/add-climb" method="get">
+        <button class="btn btn-primary" type="submit">Add Climb</button>
+    </form>
+</div>
+{% endblock %}

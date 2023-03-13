@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Change Password
+{% endblock %}
+
+{% block main %}
+    <h1> Change Password </h1> 
+    <form action="/edit-pass" method="post">
+        <div class="mb-3">
+            <label for="password">Change password</label>
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <label for="confirmation">Confirm new password</label>
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Save New Password</button>
+    </form>
+{% endblock %}

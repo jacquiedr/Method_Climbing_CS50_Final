@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Goals
+{% endblock %}
+
+{% block main %}
+
+    <div class="goal-container">
+        <ul>
+            <h1 class="goal-title">{{ name }}'s Goals</h1>
+            {% for row in goals %}
+                <li>
+                    <span class="goal" {% if row.complete %} style="text-decoration: line-through;" {% endif %}>{{ row.goal }}</span>
+                    <a href="{{ url_for('check', index=loop.index0) }}"><button class="btn btn-primary change">Mark as complete</button></a>
+                    <a href="{{ url_for('edit', index=loop.index0) }}"><button class="btn btn-primary change">Edit</button></a>
+                    <a href="{{ url_for('delete', index=loop.index0) }}"><button class="btn btn-primary change">Delete</button></a>
+                </li>
+            {% endfor %}
+        </ul>
+        <form class="add-goal" action="{{ url_for('add') }}", method="post">
+            <input type="text" name="goal">
+            <button class="btn-primary btn" type="submit">Add Goal</button>
+        </form>
+    </div>
+
+{% endblock %}

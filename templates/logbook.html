@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Session Logbook
+{% endblock %}
+
+{% block main %}
+    <h1>{{ firstName }}'s Logbook</h1>
+    <br>
+    <h4>You have sent a total of <b>{{ climbs_sent }}</b> climbs in the span of <b>{{ total_sessions }}</b> sessions. </h4>
+    <form action="/logbook" method="post">
+        <div class="mb-3">
+            <label for="date">See Session Data From</label>
+            <select class="form-control mx-auto w-auto" id="date" name="date">
+                {% for row in session_day %}
+                    <option>{{ row.date }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Get Session Overview</button>
+    </form>
+    <form action="/add-climb" method="get">
+        <button class="btn btn-primary" type="submit">Log A New Climb/Session</button>
+    </form>
+
+{% endblock %}

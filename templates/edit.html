@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Edit
+{% endblock %}
+
+{% block main %}
+    <h1> Edit Goal </h1>
+    <form action="{{ url_for('edit', index=index) }}", method="post">
+        <div class="mb-3">
+            <input type="text" name="goal" value="{{ old_goal }}">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+
+{% endblock %}

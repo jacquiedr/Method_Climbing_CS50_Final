@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,300&family=Phudu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0B132B;
+    color: #F6FFF8;
+}
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
+    font-family: 'Phudu', cursive;
+}
+
+nav .short-description {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+    color: #6B9080;
+    font-style: italic;
+    display: none;
+}
+.navbar-brand .color {
+    color: #6B9080;
+}
+
+.nav-item {
+    font-size: small;
+    text-align: center;
+}
+
+.navbar-nav>.nav-item:hover {
+    text-decoration: underline;
+    text-decoration-color: #CCE3DE;
+}
+
+.homepage-text {
+    color: #F6FFF8;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.text-in-homepage{
+    color: #CCE3DE;
+}
+
+.btn{
+    background-color: #A4C3B2;
+    color:#F6FFF8;
+    border: none;
+    margin: 10px;
+
+}
+.btn:hover {
+    background-color: #6B9080;
+    color: #F6FFF8;
+}
+form{
+    text-align: center;
+    padding-top: 30px;
+}
+.hmpg-btns{
+    text-align: center;
+    margin-top: -25px;
+}
+.profile-pic>img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.profile-info{
+    padding-top: 15px;
+}
+.more-info {
+    text-align: left;
+    padding: 25px;
+}
+.edit-profile{
+    margin-top: -10px;
+    width: 120px;
+    text-align: center;
+    font-size: 10px;
+}
+.title-container{
+    text-align: center;
+    padding-bottom: 30px;
+    padding-left: 20px;
+}
+.col-1{
+    width:100%;
+    margin-bottom: 25px;
+}
+.col-2{
+    width:100%;
+    text-align: center;
+    border-top: 1px solid #F6FFF8;
+}
+
+.table{
+    color: #F6FFF8;
+    width: 900px;
+    margin: 0 auto;
+    border: 1px solid #F6FFF8;
+}
+.logbookrow{
+    background-color: #6B9080;
+}
+.logbookrow:hover{
+    background-color: #A4C3B2;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: #F6FFF8;
+}
+a:hover{
+    color: #F6FFF8;
+}
+option{
+    text-align:center;
+}
+.table{
+    color: #F6FFF8;
+    background-color: #A4C3B2;
+}
+.table-active{
+    color: #F6FFF8;
+    background-color: #A4C3B2;
+}
+.edit-btn{
+    width: 50px;
+    height: 40px;
+    font-size: 8px;
+}
+.goal-title{
+    text-align: left;
+    padding-bottom: 30px;
+}
+.goal-container{
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+li{
+    color: #EAF4F4;
+    list-style-type: none;
+    font-size: 20px;
+    text-align: left;
+}
+.goal {
+    padding-right: 10px;
+}
+.change{
+    font-size: 10px;
+    margin-right: -10px;
+}
+.row{
+    width:30%;
+}
+.container-goal-btns{
+    display: flex;
+}
+.add-goal {
+    text-align: left;
+    margin-left: 40px;
+}
+.add-climb{
+    margin-top: -60px;
+}
+.chartBox{
+    width: 600px;
+    margin: 0 auto;
+}
+/* Tablet */
+@media all and (min-width: 600px) {
+    .text-in-homepage h1{
+        font-size: 45px;
+    }
+    .text-in-homepage h3{
+        font-size: 20px;
+    }
+    .about {
+        top: 50%;
+        left: 65%;
+    }
+    .about h1 {
+        font-size: 35px;
+    }
+}
+
+/* Desktop */
+@media all and (min-width: 960px) {
+    .text-in-homepage h1{
+        font-size: 75px;
+    }
+    .text-in-homepage h3{
+        font-size: 25px;
+    }
+    nav .short-description {
+        display: initial;
+    }
+    .medium-title{
+        font-size: 45px;
+    }
+    .about {
+        top: 50%;
+        left: 57%;
+        width: 500px
+    }
+    .about h1 {
+        font-size: 55px;
+    }
+    .text-in-about {
+        width: 800px;
+        padding: 30px;
+        padding-left: 40px;
+        padding-top: 60px;
+    }
+    .text-in-about p {
+        font-size: 15px;
+    }
+    .text-in-about h1{
+
+    }
+    .profile-pic{
+        float: left;
+        display: block;
+        padding: 50px;
+        padding-top: 10px;
+    }
+    .profile-info{
+        padding-top: 10px;
+        text-align: left;
+    }
+    .col-1{
+        float: left;
+        width: 50%;
+        height: 400px;
+    }
+    .col-2{
+        float: right;
+        width: 50%;
+        border-left: 1px solid #F6FFF8;
+        padding-left: 30px;
+        border-top: none;
+        height: 400px;
+    }
+    .edit-profile{
+        float: left;
+    }
+    .title-container {
+        padding-left: 40px;
+        text-align: left;
+        padding-bottom: 30px;
+    }
+}
+
+/* BIG Desktop */
+@media all and (min-width: 1600px) {
+    .text-in-homepage h1{
+        font-size: 75px;
+    }
+    nav .short-description {
+        display: initial;
+    }
+    .about {
+        top: 50%;
+        left: 65%;
+    }
+
+}
