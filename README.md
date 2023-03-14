@@ -1,4 +1,4 @@
-# CS50_Final_Project: METHOD CLIMBING
+# CS50 Final Project: METHOD CLIMBING
 ## Video Demo: https://www.youtube.com/watch?v=UFanJqpbrow
 ## Description:
 
